@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VideoToAudioVer2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="160" Width="420">
+        Title="오디오(.mp3) 파일 변환" Height="180" Width="420">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="45"/>
         </Grid.RowDefinitions>
-        <Button x:Name="btnFindVideo" Grid.Row="0" Content="Video 파일 열기" HorizontalAlignment="Center" VerticalAlignment="Top"  Click="btnFindVideo_Click" Grid.Column="1" Grid.RowSpan="2" Width="379" Height="31" Margin="10,10,10,0">
+        <Button x:Name="btnFindVideo" Grid.Row="0" Content="Video 파일 열기" HorizontalAlignment="Center" VerticalAlignment="Top"  Click="btnFindVideo_Click" Grid.Column="1" Grid.RowSpan="2" Width="379" Height="30" Margin="10,10,10,0">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Foreground" Value="White" />
@@ -29,7 +29,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="btnSave" Grid.Row="1" Content="Audio 파일(.mp3) 변환하기" HorizontalAlignment="Center" VerticalAlignment="Top"  Click="btnSave_Click" Grid.Column="1" Grid.RowSpan="2" Width="379" Height="31" Margin="10,10,10,0">
+        <Button x:Name="btnSave" Grid.Row="1" Content="Audio 파일(.mp3) 변환하기" HorizontalAlignment="Center" VerticalAlignment="Top"  Click="btnSave_Click" Grid.Column="1" Grid.RowSpan="2" Width="379" Height="30" Margin="10,10,10,0">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Foreground" Value="White" />
@@ -37,7 +37,7 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="{x:Type Button}">
-                                <Border x:Name="borderBtnFindVideo" CornerRadius="5" Background="#F29580" BorderBrush="{TemplateBinding BorderBrush}">
+                                <Border x:Name="borderBtnSave" CornerRadius="5" Background="#F29580" BorderBrush="{TemplateBinding BorderBrush}">
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" ContentTemplate="{TemplateBinding ContentTemplate}" />
                                 </Border>
                             </ControlTemplate>
@@ -46,7 +46,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Border Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Height="40" Margin="0,0,0,0" Background="#FFEDEBEB">
+        <Border Grid.Row="2" Height="35" Margin="0,0,0,0" Background="#FFEDEBEB">
             <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" FontSize="10">
                 프로그램 문의 : 
                 <!--<LineBreak/>-->
