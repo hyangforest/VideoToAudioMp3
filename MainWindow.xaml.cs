@@ -140,13 +140,13 @@ namespace VideoToAudioVer2
         /// <param name="e"></param>
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(SelectDirectory()))
+            if (string.IsNullOrEmpty(videoFilePath))
             {
-                if (string.IsNullOrEmpty(videoFilePath))
-                {
-                    System.Windows.MessageBox.Show("먼저 변환할 Video 파일을 선택해주세요.", "Video 파일 열기");
-                }
-                else
+                System.Windows.MessageBox.Show("먼저 변환할 Video 파일을 선택해주세요.", "Video 파일 열기");
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(SelectDirectory()))
                 {
                     // 커서 Wait 처리
                     Mouse.OverrideCursor = System.Windows.Input.Cursors.Wait;
@@ -200,7 +200,7 @@ namespace VideoToAudioVer2
                     }
 
                     // 커서 원래대로 복원
-                    Mouse.OverrideCursor = null;  
+                    Mouse.OverrideCursor = null;
                 }
             }
         }
