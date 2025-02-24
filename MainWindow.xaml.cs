@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.IO;
 using System;
 using NAudio.Wave;
+using NAudio.Lame;
 
 namespace VideoToAudioVer2
 {
@@ -59,7 +60,11 @@ namespace VideoToAudioVer2
                 using (var reader = new MediaFoundationReader(videoFilePath))
                 {
                     // NAudio를 사용하여 오디오 스트림을 .mp3 파일로 저장
-                    WaveFileWriter.CreateWaveFile(outputMp3Path, reader);
+                    //WaveFileWriter.CreateWaveFile(outputMp3Path, reader);
+                    using (var writer = new LameMP3FileWriter(outputMp3Path, reader.WaveFormat, LAMEPreset.STANDARD))
+                    {
+                        reader.CopyTo(writer);
+                    }
                 }
 
                 return true;
